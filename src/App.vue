@@ -1,7 +1,22 @@
 <template>
+    <Navbar></Navbar>
   <router-view/>
 </template>
 
+<script lang="ts">
+import Navbar from "@/components/Navbar.vue";
+import { Vue, Options} from "vue-class-component";
+
+@Options({
+    components: {
+        Navbar
+    }
+})
+
+export default class App extends Vue {
+
+}
+</script>
 <style>
 body {
     background: #f2f2f2;
