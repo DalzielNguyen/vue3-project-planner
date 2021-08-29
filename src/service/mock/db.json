@@ -1,16 +1,28 @@
 {
-	"projects": [
-		{
-			"id": 1,
-			"title": "Create new homepage banner",
-			"details": "Lorem ipsum",
-			"complete": false
-		},
-		{
-			"id": 2,
-			"title": "Create marketing email",
-			"details": "Lorem ipsum",
-			"complete": true
-		}
-	]
+  "projects": [
+    {
+      "id": 1,
+      "title": "Create new homepage banner",
+      "details": "Lorem ipsum",
+      "complete": true
+    },
+    {
+      "id": 2,
+      "title": "Create marketing email",
+      "details": "Lorem ipsum",
+      "complete": true
+    },
+    {
+      "title": "Submit task",
+      "details": "submit code to github",
+      "id": 3,
+      "complete": false
+    },
+    {
+      "title": "Demo",
+      "details": "Demo add project",
+      "complete": false,
+      "id": 4
+    }
+  ]
 }

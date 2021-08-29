@@ -24,6 +24,43 @@ const actions: ActionTree<ListProjectModel, ProjectModel> = {
             console.log(error);
         }
         return true;
+    },
+
+    async deleteProject({commit, dispatch}, project: ProjectModel): Promise<boolean> {
+        try {
+            const result: boolean = await JsonService.deleteProject(project);
+            if(result) {
+                dispatch('fetchData');
+            }
+            return result;
+        } catch (error) {
+            console.log(error);
+        }
+        return false;
+    },
+
+    async editProject({commit, dispatch}, project: ProjectModel): Promise<boolean> {
+        try {
+            const result: boolean = await JsonService.editProject(project);
+            if (result) {
+                dispatch('fetchData');
+            }
+            return result;
+        } catch (error) {
+            console.log(error);
+        }
+        return false;
+    },
+
+    async addProject({commit}, path: {title: string, details: string}): Promise<boolean> {
+        try {
+            const result: boolean = await JsonService.addProject(path.title, path.details);
+            return result;
+        } catch (error) {
+            console.log(error);
+        }
+        return false;
+
     }
 }
 

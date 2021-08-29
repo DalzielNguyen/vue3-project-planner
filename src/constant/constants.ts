@@ -1,0 +1,1 @@
+export const DEFAULT_SUCCESS_CODE = 202;

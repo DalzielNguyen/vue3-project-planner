@@ -1,5 +1,5 @@
 export default interface ProjectModel {
-    id: number,
+    id?: number,
     title: string,
     details: string,
     complete: boolean

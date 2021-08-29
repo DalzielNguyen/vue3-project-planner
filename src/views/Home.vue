@@ -2,7 +2,7 @@
   <div class="home">
       <div v-if="projects.length">
           <div v-for="project in projects" :key="project.id">
-              <p>{{project.title}}</p>
+              <ProjectInformation :project="project"></ProjectInformation>
           </div>
       </div>
   </div>
@@ -12,8 +12,11 @@
 import { Options, Vue } from 'vue-class-component';
 import {mapActions, mapState} from "vuex";
 import ProjectModel from "@/model/ProjectModel";
+import ProjectInformation from "@/components/ProjectInformation.vue";
 @Options({
-    components: {},
+    components: {
+        ProjectInformation
+    },
     computed: {
         ...mapState("listProject", {projects:"projects"}),
     },
@@ -28,10 +31,7 @@ export default class Home extends Vue {
 
     async created() {
         const result = await this.fetchData();
-        if (result) {
-            console.log(this.projects);
-        }
-        else {
+        if (!result) {
             console.log("err");
         }
     }
