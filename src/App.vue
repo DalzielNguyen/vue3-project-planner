@@ -13,10 +13,9 @@ import { Vue, Options} from "vue-class-component";
     }
 })
 
-export default class App extends Vue {
-
-}
+export default class App extends Vue {}
 </script>
+
 <style>
 body {
     background: #f2f2f2;
