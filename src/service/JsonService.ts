@@ -47,6 +47,18 @@ class JsonService {
         }
         return false;
     }
+
+    async getProject(id: string): Promise<ProjectModel> {
+        try {
+            const response = await axiosInstance.get(`projects/${id}`);
+            if (response.status < DEFAULT_SUCCESS_CODE) {
+                return response.data as ProjectModel;
+            }
+        } catch (error) {
+            console.log(error);
+        }
+        return {} as ProjectModel
+    }
 }
 
 export default new JsonService();

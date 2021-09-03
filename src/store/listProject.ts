@@ -2,6 +2,7 @@ import {ActionTree, GetterTree, Module, MutationTree} from "vuex";
 import ProjectModel from "@/model/ProjectModel";
 import ListProjectModel from "@/model/ListProjectModel";
 import JsonService from "@/service/JsonService";
+import ProjectForm from "@/components/ProjectForm.vue";
 
 const initialState: ListProjectModel = {
     projects: []
@@ -60,7 +61,16 @@ const actions: ActionTree<ListProjectModel, ProjectModel> = {
             console.log(error);
         }
         return false;
+    },
 
+    async getProject({commit}, id: string): Promise<ProjectModel> {
+        try {
+            const project: ProjectModel = await JsonService.getProject(id);
+            return project;
+        } catch (error) {
+            console.log(error);
+        }
+        return {} as ProjectModel
     }
 }
 
