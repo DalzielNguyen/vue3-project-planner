@@ -3,6 +3,7 @@ import ProjectModel from "@/model/ProjectModel";
 import ListProjectModel from "@/model/ListProjectModel";
 import JsonService from "@/service/JsonService";
 import ProjectForm from "@/components/ProjectForm.vue";
+import router from "@/router";
 
 const initialState: ListProjectModel = {
     projects: []

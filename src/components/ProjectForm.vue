@@ -1,5 +1,5 @@
 <template>
-    <form @submit="handleSubmit">
+    <form @submit.prevent="handleSubmit">
         <label>Title:</label>
         <input v-model="title" type="text" required/>
         <label >Detail:</label>
@@ -44,7 +44,6 @@ export default class ProjectForm extends Vue {
         if (this.buttonTitle === "Add Project") {
             this.$emit('edit-project', this.title, this.details);
         } else {
-
             if (this.project) {
                 this.project.title = this.title;
                 this.project.details = this.details;
@@ -52,8 +51,10 @@ export default class ProjectForm extends Vue {
                 if (!result) {
                     console.log("Fail to toggle Project");
                 }
+                await this.$router.push({name: 'Home'});
             }
         }
+
     }
 }
 

@@ -27,7 +27,6 @@ class JsonService {
         try {
             const response = await axiosInstance.patch(`projects/${project.id}`, project);
             if (response.status < DEFAULT_SUCCESS_CODE) return true;
-            console.log(response);
         } catch (error) {
             console.log(error);
         }

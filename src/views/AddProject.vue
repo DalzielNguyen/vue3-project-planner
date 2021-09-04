@@ -22,6 +22,7 @@ export default class AddProject extends Vue {
         if (!result) {
             console.log("Add Project is Failed");
         }
+        await this.$router.push({name: 'Home'});
     }
 }
 </script>
